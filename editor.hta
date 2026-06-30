@@ -1,0 +1,339 @@
+<html>
+<head>
+<title>RTF Tab Editor</title>
+
+<HTA:APPLICATION
+  ID="RTFEditor"
+  APPLICATIONNAME="RTF Editor"
+  BORDER="thin"
+  CAPTION="yes"
+  SHOWINTASKBAR="yes"
+  SINGLEINSTANCE="no"
+  SYSMENU="yes"
+  WINDOWSTATE="normal"
+/>
+
+<style>
+body { font-family: Consolas, monospace; margin: 0; }
+.toolbar { background: #ddd; padding: 6px; }
+
+#editor {
+    position: relative;
+    width: 100%;
+    height: 90%;
+    overflow: auto;
+    white-space: pre;
+    outline: none;
+    font-family: Consolas, monospace;
+}
+
+#text {
+    white-space: pre;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#caret {
+    position: absolute;
+    width: 8px;
+    height: 18px;
+    background: black;
+    animation: blink 1s step-start infinite;
+    pointer-events: none;
+}
+
+@keyframes blink { 50% { opacity: 0; } }
+</style>
+
+<script language="JScript">
+
+var lineHeight = 18;
+var charWidth  = 8;
+
+var templateText = "";
+var currentText  = "";
+var caretPos     = 0;
+var caret        = null;
+var currentFile  = "";
+
+// ---------------- INIT ----------------
+function window_onload() {
+    caret = document.getElementById("caret");
+    refreshText();
+    document.getElementById("editor").focus();
+}
+
+// ---------------- SAFE REPLACE ----------------
+function safeReplace(text, pattern, replacement) {
+    try { return text.replace(pattern, replacement); }
+    catch(e) { return text; }
+}
+
+// ---------------- RTF CLEANER ----------------
+function cleanRTF(rtf) {
+
+    // Convert \'xx hex escapes
+    rtf = safeReplace(rtf, /\\'([0-9A-Fa-f]{2})/g, function(_, hex) {
+        try { return String.fromCharCode(parseInt(hex, 16)); }
+        catch(e) { return ""; }
+    });
+
+    // Convert \par to newline
+    rtf = safeReplace(rtf, /\\par\b/g, "\n");
+
+    // Remove control words like \b, \i, \fs20, \f1, etc.
+    rtf = safeReplace(rtf, /\
+
+\[a-zA-Z]+\d*/g, "");
+
+    // Remove simple RTF groups { ... }
+    rtf = safeReplace(rtf, /\{[^{}]*\}/g, "");
+
+    // Remove leftover braces
+    rtf = safeReplace(rtf, /[{}]/g, "");
+
+    // Remove stray backslashes
+    rtf = safeReplace(rtf, /\\/g, "");
+
+    return rtf;
+}
+
+// ---------------- LOAD FILE ----------------
+function loadSelectedFile(input) {
+
+    if (input.value == "") return;
+
+    var fso  = new ActiveXObject("Scripting.FileSystemObject");
+    var file = fso.OpenTextFile(input.value, 1, false);
+    var content = file.ReadAll();
+    file.Close();
+
+    currentFile = input.value;
+
+    // CLEAN RTF → plain text
+    var cleaned = cleanRTF(content);
+
+    templateText = cleaned;
+    currentText  = cleaned;
+    caretPos     = 0;
+
+    refreshText();
+}
+
+// ---------------- RESTORE TEMPLATE CHAR ----------------
+function restoreFromTemplateAt(pos) {
+    var ch = " ";
+    if (pos < templateText.length) {
+        ch = templateText.charAt(pos);
+        if (ch == "\r" || ch == "\n") ch = " ";
+    }
+
+    if (pos < currentText.length) {
+        currentText =
+            currentText.slice(0, pos) +
+            ch +
+            currentText.slice(pos + 1);
+    }
+}
+
+// ---------------- CARET CLICK ----------------
+function editorClick(e) {
+    var lines = currentText.split("\n");
+
+    var x = e.offsetX;
+    var y = e.offsetY;
+
+    var line = Math.floor(y / lineHeight);
+    if (line < 0) line = 0;
+    if (line >= lines.length) line = lines.length - 1;
+
+    var col = Math.floor(x / charWidth);
+    if (col < 0) col = 0;
+    if (col > lines[line].length) col = lines[line].length;
+
+    var pos = 0;
+    for (var i = 0; i < line; i++) pos += lines[i].length + 1;
+    pos += col;
+
+    caretPos = pos;
+    updateCaret();
+}
+
+// ---------------- KEY HANDLER ----------------
+function handleKey(e) {
+    var text = currentText;
+
+    // SPACE → restore template
+    if (e.key === " ") {
+        restoreFromTemplateAt(caretPos);
+        caretPos++;
+        refreshText();
+        e.preventDefault();
+        return;
+    }
+
+    // BACKSPACE → move left + restore template
+    if (e.key === "Backspace") {
+        if (caretPos > 0) {
+            caretPos--;
+            restoreFromTemplateAt(caretPos);
+            refreshText();
+        }
+        e.preventDefault();
+        return;
+    }
+
+    // DELETE → restore template at caret
+    if (e.key === "Delete") {
+        restoreFromTemplateAt(caretPos);
+        refreshText();
+        e.preventDefault();
+        return;
+    }
+
+    // ENTER → insert newline
+    if (e.key === "Enter") {
+        currentText = text.slice(0, caretPos) + "\n" + text.slice(caretPos);
+        caretPos++;
+        refreshText();
+        e.preventDefault();
+        return;
+    }
+
+    // CHARACTER INPUT → overwrite
+    if (e.key.length === 1) {
+        if (caretPos < currentText.length) {
+            currentText =
+                text.slice(0, caretPos) +
+                e.key +
+                text.slice(caretPos + 1);
+        } else {
+            currentText += e.key;
+        }
+        caretPos++;
+        refreshText();
+        e.preventDefault();
+        return;
+    }
+
+    // ARROWS
+    if (e.key === "ArrowLeft") {
+        if (caretPos > 0) caretPos--;
+        updateCaret();
+        e.preventDefault();
+        return;
+    }
+
+    if (e.key === "ArrowRight") {
+        if (caretPos < currentText.length) caretPos++;
+        updateCaret();
+        e.preventDefault();
+        return;
+    }
+
+    if (e.key === "ArrowUp") {
+        moveVertical(-1);
+        e.preventDefault();
+        return;
+    }
+
+    if (e.key === "ArrowDown") {
+        moveVertical(1);
+        e.preventDefault();
+        return;
+    }
+
+    e.preventDefault();
+}
+
+// ---------------- MOVE UP/DOWN ----------------
+function moveVertical(dir) {
+    var lines = currentText.split("\n");
+
+    var pos  = caretPos;
+    var line = 0;
+    var col  = 0;
+
+    var count = 0;
+    for (var i = 0; i < lines.length; i++) {
+        if (pos <= count + lines[i].length) {
+            line = i;
+            col  = pos - count;
+            break;
+        }
+        count += lines[i].length + 1;
+    }
+
+    var newLine = line + dir;
+    if (newLine < 0 || newLine >= lines.length) return;
+
+    var targetLine = lines[newLine];
+    if (typeof targetLine !== "string") targetLine = "";
+
+    var newCol = col;
+    if (newCol > targetLine.length) newCol = targetLine.length;
+
+    var newPos = 0;
+    for (var j = 0; j < newLine; j++) newPos += lines[j].length + 1;
+    newPos += newCol;
+
+    caretPos = newPos;
+    updateCaret();
+}
+
+// ---------------- REFRESH TEXT ----------------
+function refreshText() {
+    document.getElementById("text").innerText = currentText;
+    updateCaret();
+}
+
+// ---------------- UPDATE CARET ----------------
+function updateCaret() {
+    if (!caret) return;
+
+    if (caretPos < 0) caretPos = 0;
+    if (caretPos > currentText.length) caretPos = currentText.length;
+
+    var before = currentText.slice(0, caretPos);
+    var lines  = before.split("\n");
+
+    var lineIndex = lines.length - 1;
+    var colIndex  = lines[lineIndex].length;
+
+    caret.style.top  = (lineIndex * lineHeight) + "px";
+    caret.style.left = (colIndex  * charWidth) + "px";
+}
+
+// ---------------- PRINT ----------------
+function printPDF() {
+    var editor = currentText;
+    var wnd = window.open("", "_blank");
+    wnd.document.write("<pre>" + editor.replace(/</g,"&lt;") + "</pre>");
+    wnd.print();
+}
+
+</script>
+
+</head>
+
+<body>
+
+<div class="toolbar">
+    <input type="file" accept=".rtf" onchange="loadSelectedFile(this)">
+    <button onclick="printPDF()">Print to PDF</button>
+</div>
+
+<div id="editor"
+     onclick="editorClick(event)"
+     onkeydown="handleKey(event)"
+     onkeyup="updateCaret()"
+     tabindex="0">
+
+    <div id="text"></div>
+    <div id="caret"></div>
+
+</div>
+
+</body>
+</html>
