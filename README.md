@@ -9,6 +9,8 @@ Use arrow keys and numbers or predefined symbols to edit and save guitar and bas
 Books Used
  <div style="text-align:center;">
 
+  <div style="text-align:center;">
+
   <!-- ROW 1 IMAGES -->
   <div style="display:inline-block; width:180px; text-align:center; margin:10px;"><img src="./books/1.png" width="150"></div><div style="display:inline-block; width:180px; text-align:center; margin:10px;"><img src="./books/2.png" width="150"></div><div style="display:inline-block; width:180px; text-align:center; margin:10px;"><img src="./books/3.png" width="150"></div>
 
@@ -25,5 +27,6 @@ Books Used
   <div style="display:inline-block; width:180px; text-align:center; margin:10px;"><strong>Programming Windows with MFC — Jeff Prosise</strong></div><div style="display:inline-block; width:180px; text-align:center; margin:10px;"><strong>Windows Script Host Programmer's Reference — Dino Esposito</strong></div><div style="display:inline-block; width:180px; text-align:center; margin:10px;"><strong>Mastering Regular Expressions — Jeffrey Friedl</strong></div>
 
 </div>
+
 
 
