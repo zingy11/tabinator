@@ -16,7 +16,7 @@ Books Used
 </span><span style="display:inline-block; width:180px; margin:10px;">
   <img src="./books/3.png" width="150">
 </span>
-
+<br>
 <!-- ROW 1 TEXT -->
 <span style="display:inline-block; width:180px; margin:10px;">
   <strong>Microsoft Windows scripting self-paced learning guide</strong>
@@ -37,7 +37,7 @@ Books Used
 </span><span style="display:inline-block; width:180px; margin:10px;">
   <img src="./books/6.jpg" width="150">
 </span>
-
+<br>
 <!-- ROW 2 TEXT -->
 <span style="display:inline-block; width:180px; margin:10px;">
   <strong>Programming Windows with MFC — Jeff Prosise</strong>
