@@ -9,38 +9,58 @@ Use arrow keys and numbers or predefined symbols to edit and save guitar and bas
 Books Used
 <p align="center">
 
-  <!-- ROW 1 -->
-  <div style="display:inline-block; width:180px; text-align:center; vertical-align:top; margin:10px;">
-    <img src="./books/1.png" alt="Book 1" width="150">
-    <strong>Microsoft Windows scripting self-paced learning guide -- Wilson, Ed 2004 cMicrosoft Press, Redmond, Wash, 2004</strong>
+  <!-- ROW 1 IMAGES -->
+  <div style="display:inline-block; width:180px; text-align:center; margin:10px;">
+    <img src="./books/1.png" width="150">
   </div>
 
-  <div style="display:inline-block; width:180px; text-align:center; vertical-align:top; margin:10px;">
-    <img src="./books/2.png" alt="Book 2" width="150">
-    <strong>RTF Specification (by Microsoft, 1997 edition)</strong>
+  <div style="display:inline-block; width:180px; text-align:center; margin:10px;">
+    <img src="./books/2.png" width="150">
   </div>
 
-  <div style="display:inline-block; width:180px; text-align:center; vertical-align:top; margin:10px;">
-    <img src="./books/3.png" alt="Book 3" width="150">
-    <strong>Inside Ole -- Kraig Brockschmidt, Microsoft programming series, Redmond, Wash, 2nd ed, 1997</strong>
+  <div style="display:inline-block; width:180px; text-align:center; margin:10px;">
+    <img src="./books/3.png" width="150">
   </div>
 
-  <br>
-
-  <!-- ROW 2 -->
-  <div style="display:inline-block; width:180px; text-align:center; vertical-align:top; margin:10px;">
-    <img src="./books/4.jpg" alt="Book 4" width="150">
-    <strong>Programming Windows with MFC -- Jeff Prosise, Microsoft Press, 2nd ed 1999</strong>
+  <!-- ROW 1 TEXT -->
+  <div style="display:inline-block; width:180px; text-align:center; margin:10px;">
+    <strong>Microsoft Windows scripting self-paced learning guide</strong>
   </div>
 
-  <div style="display:inline-block; width:180px; text-align:center; vertical-align:top; margin:10px;">
-    <img src="./books/5.jpg" alt="Book 5" width="150">
-    <strong>Windows Script Host programmer's reference -- Dino Esposito, Wrox Press Birmingham, UK, 1999</strong>
+  <div style="display:inline-block; width:180px; text-align:center; margin:10px;">
+    <strong>RTF Specification (Microsoft, 1997)</strong>
   </div>
 
-  <div style="display:inline-block; width:180px; text-align:center; vertical-align:top; margin:10px;">
-    <img src="./books/6.jpg" alt="Book 6" width="150">
-    <strong>Mastering Regular Expressions -- Jeffrey E. F. Friedl, OReilly, 3rd Edition, 2006</strong>
+  <div style="display:inline-block; width:180px; text-align:center; margin:10px;">
+    <strong>Inside OLE — Kraig Brockschmidt (1997)</strong>
+  </div>
+
+  <br><br>
+
+  <!-- ROW 2 IMAGES -->
+  <div style="display:inline-block; width:180px; text-align:center; margin:10px;">
+    <img src="./books/4.jpg" width="150">
+  </div>
+
+  <div style="display:inline-block; width:180px; text-align:center; margin:10px;">
+    <img src="./books/5.jpg" width="150">
+  </div>
+
+  <div style="display:inline-block; width:180px; text-align:center; margin:10px;">
+    <img src="./books/6.jpg" width="150">
+  </div>
+
+  <!-- ROW 2 TEXT -->
+  <div style="display:inline-block; width:180px; text-align:center; margin:10px;">
+    <strong>Programming Windows with MFC — Jeff Prosise</strong>
+  </div>
+
+  <div style="display:inline-block; width:180px; text-align:center; margin:10px;">
+    <strong>Windows Script Host Programmer's Reference — Dino Esposito</strong>
+  </div>
+
+  <div style="display:inline-block; width:180px; text-align:center; margin:10px;">
+    <strong>Mastering Regular Expressions — Jeffrey Friedl</strong>
   </div>
 
 </p>
