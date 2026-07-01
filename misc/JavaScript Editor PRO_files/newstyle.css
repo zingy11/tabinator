@@ -1,0 +1,103 @@
+﻿@charset "iso-8859-1";
+/* CSS Document */
+.Menu {
+	color: #F0F00F;
+	font-family: Tahoma;
+	font-size: 12px;
+	font-weight: bold;	
+}
+.Menu a:link {
+	text-decoration: none;
+	color: #F0F00F;
+}
+
+.Menu a:visited {
+	text-decoration: none;
+	color: #F0F00F;
+}
+
+.Menu a:active {
+	color: #FFFF00;
+}
+
+.EmptyImage {
+	color: #0000FF;
+	background-color: #FFFFE1;
+}
+
+#Yellow {
+	font-family: "Courier New", Courier, monospace;
+	font-size: 14px;
+	background-color: #FFFFEA;
+	border-style: dotted;
+	border-width: 1px;
+	padding: 10px;
+}
+
+#Blue {
+	font-family: "Courier New", Courier, monospace;
+	font-size: 14px;
+	background-color: #F0F0FF;
+	border-style: dotted;
+	border-width: 1px;
+	padding: 10px;
+}
+
+.TopMenu {
+	color: #FFFF00;
+	background-color: #5A5CE5;
+}
+.TopMenu a:link {
+	text-decoration: none;
+	color: #F0F00F;
+}
+
+.TopMenu a:visited {
+	text-decoration: none;
+	color: #F0F00F;
+}
+
+.TopMenu a:active {
+	color: #FFFF00;
+}
+.GeneralFont {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px; 
+} 
+
+.Header2 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	background-color: #FFFFE1;
+	font-size: 16px;
+}
+.Header {
+	color: #343585;
+}
+H1 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 20px;
+}
+
+H2 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 16px;
+}
+
+.BoldOrange {
+	font-weight: bold;
+	color: #FF6601;
+}
+
+.BoldBlue {
+	font-weight: bold;
+	color: #000085;
+}
+
+body {
+	scrollbar-face-color: #7878FE;
+    scrollbar-arrow-color: #FFFF00;
+    scrollbar-track-color: #D5E9FF;
+    scrollbar-base-color: #7878FE;
+	margin: 0px;
+}
+p {text-indent:3%;}

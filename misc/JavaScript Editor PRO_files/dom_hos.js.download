@@ -1,0 +1,26 @@
+
+
+function randomNumber_img (m,n)
+{
+  m = parseInt(m);
+  n = parseInt(n);
+  return Math.floor( Math.random() * (n - m + 1) ) + m;
+}
+
+var int_img = randomNumber_img (1,2);
+var big_img = 'domaining.png';
+
+if (int_img == 2){
+    big_img = 'domaining.png';
+}
+else {
+    big_img = 'hosting.png';
+}
+
+
+
+document.write('<div align="left"><a rel="nofollow" href="https://dnray.com/" target="_blank" title="Visit Hosting & Domaining Forum">');
+
+    document.write('<img src="https://dnray.com/mimg/' + big_img +'" />');
+
+document.write('</a></div>');

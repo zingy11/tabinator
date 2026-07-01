@@ -1,0 +1,37 @@
+<html>
+<head>
+<hta:application
+    id="rtfEditor"
+    border="thin"
+    caption="yes"
+    showintaskbar="yes"
+    singleinstance="yes"
+    windowstate="normal"
+    scroll="no"
+/>
+
+<script language="JScript" src="editor.js"></script>
+
+<style>
+body {
+    font-family: Consolas, monospace;
+    font-size: 14px;
+    margin: 0;
+    padding: 10px;
+    background: #f0f0f0;
+}
+#screen {
+    white-space: pre-wrap;
+    background: #ffffff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    height: 90vh;
+    overflow: auto;
+}
+</style>
+</head>
+
+<body onload="initEditor()">
+<div id="screen"></div>
+</body>
+</html>
