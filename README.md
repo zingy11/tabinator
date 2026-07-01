@@ -11,6 +11,7 @@ Books Used
  <!-- ROW 1 IMAGES -->
 <span style="display:inline-block; width:180px; margin:10px;">
   <img src="./books/1.png" width="150">
+ <strong>Microsoft Windows scripting self-paced learning guide -- Wilson, Ed 2004 cMicrosoft Press, Redmond, Wash, 2004</strong>
 </span><span style="display:inline-block; width:180px; margin:10px;">
   <img src="./books/2.png" width="150">
 </span><span style="display:inline-block; width:180px; margin:10px;">
@@ -19,7 +20,7 @@ Books Used
 <br>
 <!-- ROW 1 TEXT -->
 <span style="display:inline-block; width:180px; margin:10px;">
-  <strong>Microsoft Windows scripting self-paced learning guide</strong>
+  <strong>Microsoft Windows scripting self-paced learning guide -- Wilson, Ed 2004 cMicrosoft Press, Redmond, Wash, 2004</strong>
 </span><span style="display:inline-block; width:180px; margin:10px;">
   <strong>RTF Specification (Microsoft, 1997)</strong>
 </span><span style="display:inline-block; width:180px; margin:10px;">
