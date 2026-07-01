@@ -22,9 +22,9 @@ Books Used
 <span style="display:inline-block; width:180px; margin:10px;">
   <strong>Microsoft Windows scripting self-paced learning guide -- Wilson, Ed 2004 cMicrosoft Press, Redmond, Wash, 2004</strong>
 </span><span style="display:inline-block; width:180px; margin:10px;">
-  <strong>RTF Specification (Microsoft, 1997)</strong>
+  <strong>Inside Ole -- Kraig Brockschmidt, Microsoft programming series, Redmond, Wash, 2nd ed, 1997</strong>
 </span><span style="display:inline-block; width:180px; margin:10px;">
-  <strong>Inside OLE — Kraig Brockschmidt (1997)</strong>
+  <strong>Programming Windows with MFC -- Jeff Prosise, Microsoft Press, 2nd ed, 1999</strong>
 </span>
 
 <!-- SPACE BETWEEN ROWS -->
@@ -41,11 +41,11 @@ Books Used
 <br>
 <!-- ROW 2 TEXT -->
 <span style="display:inline-block; width:180px; margin:10px;">
-  <strong>Programming Windows with MFC — Jeff Prosise</strong>
+  <strong>Programming Windows with MFC -- Jeff Prosise, Microsoft Press , 2nd ed 1999</strong>
 </span><span style="display:inline-block; width:180px; margin:10px;">
-  <strong>Windows Script Host Programmer's Reference — Dino Esposito</strong>
+  <strong>Windows Script Host programmer's reference -- Dino (Dino Esposito), Wrox Press Birmingham, UK, 1999</strong>
 </span><span style="display:inline-block; width:180px; margin:10px;">
-  <strong>Mastering Regular Expressions — Jeffrey Friedl</strong>
+  <strong>Mastering Regular Expressions -- Jeffrey E. F. Friedl, OReilly. 3rd.Edition, 2006</strong>
 </span>
 
 
