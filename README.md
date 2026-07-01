@@ -7,6 +7,7 @@ Use arrow keys and numbers or predefined symbols to edit and save guitar and bas
 
 <hr>
 Books Used
+<br>
 <span style="display:inline-block; width:180px; margin:20px;">
   <img src="./books/1.png" width="150">
 </span>
