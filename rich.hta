@@ -1,0 +1,89 @@
+<html>
+<head>
+<title>RTF Editor</title>
+
+<HTA:APPLICATION
+  ID="RTFEditor"
+  APPLICATIONNAME="RTF Editor"
+  BORDER="thin"
+  CAPTION="yes"
+  SHOWINTASKBAR="yes"
+  SINGLEINSTANCE="no"
+  SYSMENU="yes"
+  WINDOWSTATE="normal"
+/>
+
+<style>
+body { font-family: Segoe UI; margin: 0; }
+.toolbar { background: #ddd; padding: 6px; }
+button { margin-right: 6px; }
+</style>
+
+<script language="JScript">
+
+var rtf;            // RichTextBox COM object
+var currentFile=""; // Path to opened file
+
+function window_onload() {
+    // Get the COM object from the <object> tag
+    rtf = document.getElementById("rtf1").object;
+}
+
+// ----------------------------
+// OPEN RTF FILE
+// ----------------------------
+function loadSelectedFile(input) {
+
+    if (input.value == "") return;
+
+    currentFile = input.value;
+
+    // Let the RichTextBox load the file directly
+    rtf.LoadFile(currentFile, 0);   // 0 = RTF format
+}
+
+// ----------------------------
+// SAVE RTF FILE
+// ----------------------------
+function saveRTF() {
+
+    if (currentFile == "") {
+        alert("Open a file first.");
+        return;
+    }
+
+    rtf.SaveFile(currentFile, 0);   // 0 = RTF format
+    alert("Saved.");
+}
+
+// ----------------------------
+// PRINT TO PDF
+// ----------------------------
+function printPDF() {
+    try {
+        rtf.SelPrint(0);   // Opens Windows print dialog
+    } catch (e) {
+        alert("Printing failed: " + e.message);
+    }
+}
+
+</script>
+
+</head>
+
+<body>
+
+<div class="toolbar">
+    <input type="file" accept=".rtf" onchange="loadSelectedFile(this)">
+    <button onclick="saveRTF()">Save</button>
+    <button onclick="printPDF()">Print to PDF</button>
+</div>
+
+<!-- RichTextBox ActiveX Control -->
+<object id="rtf1"
+        classid="CLSID:3B7C8860-D78F-101B-B9B5-04021C009402"
+        width="100%" height="90%">
+</object>
+
+</body>
+</html>
