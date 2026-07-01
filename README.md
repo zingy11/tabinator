@@ -7,7 +7,7 @@ Use arrow keys and numbers or predefined symbols to edit and save guitar and bas
 
 <hr>
 Books Used
-<p align="center">
+<div style="text-align:center;">
 
   <!-- ROW 1 IMAGES -->
   <div style="display:inline-block; width:180px; text-align:center; margin:10px;">
@@ -35,7 +35,8 @@ Books Used
     <strong>Inside OLE — Kraig Brockschmidt (1997)</strong>
   </div>
 
-  <br><br>
+  <!-- SPACE BETWEEN ROWS -->
+  <div style="height:20px;"></div>
 
   <!-- ROW 2 IMAGES -->
   <div style="display:inline-block; width:180px; text-align:center; margin:10px;">
@@ -63,4 +64,4 @@ Books Used
     <strong>Mastering Regular Expressions — Jeffrey Friedl</strong>
   </div>
 
-</p>
+</div>
