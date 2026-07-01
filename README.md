@@ -19,9 +19,11 @@ Books Used
 </span>
 <br>
 
-  <strong>Microsoft Windows scripting self-paced learning guide -- Wilson, Ed 2004 cMicrosoft Press, Redmond, Wash, 2004</strong>
-  <strong>Inside Ole -- Kraig Brockschmidt, Microsoft programming series, Redmond, Wash, 2nd ed, 1997</strong>
-  <strong>Programming Windows with MFC -- Jeff Prosise, Microsoft Press, 2nd ed, 1999</strong>
+  <strong style="font-size:50%">Microsoft Windows scripting self-paced learning guide -- Wilson, Ed 2004 cMicrosoft Press, Redmond, Wash, 2004</strong>
+  <br>
+  <strong style="font-size:50%">Inside Ole -- Kraig Brockschmidt, Microsoft programming series, Redmond, Wash, 2nd ed, 1997</strong>
+  <br>
+  <strong style="font-size:50%">Programming Windows with MFC -- Jeff Prosise, Microsoft Press, 2nd ed, 1999</strong>
 
 
 <!-- SPACE BETWEEN ROWS -->
@@ -37,9 +39,11 @@ Books Used
 </span>
 <br>
 
-  <strong>Programming Windows with MFC -- Jeff Prosise, Microsoft Press , 2nd ed 1999</strong>>
-  <strong>Windows Script Host programmer's reference -- Dino (Dino Esposito), Wrox Press Birmingham, UK, 1999</strong>
-  <strong>Mastering Regular Expressions -- Jeffrey E. F. Friedl, OReilly. 3rd.Edition, 2006</strong>
+  <strong style="font-size:50%">Programming Windows with MFC -- Jeff Prosise, Microsoft Press , 2nd ed 1999</strong>
+  <br>
+  <strong style="font-size:50%">Windows Script Host programmer's reference -- Dino (Dino Esposito), Wrox Press Birmingham, UK, 1999</strong>
+  <br>
+  <strong style="font-size:50%">Mastering Regular Expressions -- Jeffrey E. F. Friedl, OReilly. 3rd.Edition, 2006</strong>
 
 
 
