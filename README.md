@@ -7,8 +7,6 @@ Use arrow keys and numbers or predefined symbols to edit and save guitar and bas
 
 <hr>
 Books Used
-<div style="text-align:center;">
-
   <!-- ROW 1 IMAGES -->
   <div style="display:inline-block; width:180px; text-align:center; margin:10px;">
     <img src="./books/1.png" width="150">
@@ -64,4 +62,3 @@ Books Used
     <strong>Mastering Regular Expressions — Jeffrey Friedl</strong>
   </div>
 
-</div>
