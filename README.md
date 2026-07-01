@@ -1,6 +1,7 @@
 # tabinator
-jscript application for editing .rtf and saving .pdf guitar tabs
+A jscript application for editing .rtf and saving .pdf guitar tabs
 
+Use arrow keys and numbers or predefined symbols to edit and save guitar and bass tabs
 
 
 
