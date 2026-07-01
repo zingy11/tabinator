@@ -9,9 +9,12 @@ Use arrow keys and numbers or predefined symbols to edit and save guitar and bas
 Books Used
 <br>
  <!-- ROW 1 IMAGES -->
-<span style="display:inline-block; width:180px; margin:10px;">
+<figure style="display:inline-block; width:180px; margin:10px; text-align:center;">
   <img src="./books/1.png" width="150">
+  <figcaption style="font-size:12px; font-weight:bold; margin-top:5px;">
     Microsoft Windows scripting self-paced learning guide — Wilson, Ed 2004
+  </figcaption>
+</figure>
 </span><span style="display:inline-block; width:180px; margin:10px;">
   <img src="./books/2.png" width="150">
 </span><span style="display:inline-block; width:180px; margin:10px;">
