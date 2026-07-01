@@ -11,7 +11,9 @@ Books Used
  <!-- ROW 1 IMAGES -->
 <span style="display:inline-block; width:180px; margin:10px;">
   <img src="./books/1.png" width="150">
-  <tag>
+  <div style="font-size:12px; margin-top:5px;">
+    Microsoft Windows scripting self-paced learning guide — Wilson, Ed 2004
+  </div>
 </span><span style="display:inline-block; width:180px; margin:10px;">
   <img src="./books/2.png" width="150">
 </span><span style="display:inline-block; width:180px; margin:10px;">
